@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>患者仪表盘 - 智护心脑</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet" />
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand"><i data-feather="shield"></i><span class="brand-text">智护心脑</span></div>
+            <nav class="nav">
+                <a href="./index.html" class="active">患者仪表盘</a>
+                <a href="./guide.html">指南解读</a>
+                <a href="./research-background.html">研究背景</a>
+                <a href="./contact.html">联系我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-head with-action">
+            <div>
+                <h1>患者仪表盘</h1>
+                <p class="muted">总览所有患者的谵妄风险状态，点击查看详情。</p>
+            </div>
+            <button id="add-patient-btn" class="button-primary"><i data-feather="user-plus"></i> 添加新患者</button>
+        </div>
+
+        <div id="patient-list-container" class="card">
+            </div>
+    </main>
+
+    <div id="add-patient-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="modal-close">&times;</button>
+            <h3>添加新患者</h3>
+            <form id="add-patient-form">
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="patientName">姓名</label>
+                        <input class="input" id="patientName" required>
+                    </div>
+                    <div class="field">
+                        <label for="patientAge">年龄</label>
+                        <input class="input" id="patientAge" type="number" required>
+                    </div>
+                    <div class="field">
+                        <label for="patientSurgery">手术类型</label>
+                        <input class="input" id="patientSurgery" placeholder="例如: 心脏搭桥术">
+                    </div>
+                    <div class="field">
+                        <label for="patientRoom">病房号</label>
+                        <input class="input" id="patientRoom" placeholder="例如: 503B">
+                    </div>
+                </div>
+                <div class="actions">
+                    <button type="submit" class="button-primary">保存患者信息</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 智护心脑 - 术后谵妄预防与干预平台. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./assets/js/database.js"></script>
+    <script src="./assets/js/dashboard.js"></script>
+    <script src="./assets/js/medical-ai-engine.js"></script>
+    <script src="./assets/js/ai-config.js"></script>
+    <script src="./assets/js/enhanced-interactions.js"></script>
+    <script src="./assets/js/dark-mode.js"></script>
+    <script src="./assets/js/search.js"></script>
+    <script src="./assets/js/performance.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>

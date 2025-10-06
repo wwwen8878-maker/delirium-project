@@ -1,0 +1,929 @@
+/* 术前谵妄风险干预样式 */
+
+.assessment-intro {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--info-light) 100%);
+    border-radius: var(--border-radius);
+    padding: 24px;
+    margin-bottom: 32px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.assessment-intro h4 {
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.intro-text {
+    color: var(--text-muted-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 认知评估部分 */
+.cognitive-assessment-section {
+    background: linear-gradient(135deg, var(--info-light) 0%, var(--primary-light) 100%);
+    border-radius: var(--border-radius);
+    padding: 24px;
+    margin-bottom: 32px;
+    border-left: 4px solid var(--info-color);
+}
+
+.cognitive-assessment-section h4 {
+    color: var(--info-color);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-description {
+    color: var(--text-muted-color);
+    font-size: 0.95em;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.cognitive-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 16px;
+}
+
+.cognitive-input-group {
+    background: var(--card-bg);
+    border-radius: var(--border-radius-sm);
+    padding: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.cognitive-input-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.input-with-help {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-with-help input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+    transition: var(--transition-normal);
+}
+
+.input-with-help input:focus {
+    outline: none;
+    border-color: var(--info-color);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+}
+
+.input-help {
+    width: 20px;
+    height: 20px;
+    background-color: var(--info-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: help;
+    transition: var(--transition-normal);
+}
+
+.input-help:hover {
+    background-color: var(--info-color);
+    transform: scale(1.1);
+}
+
+.input-note {
+    display: block;
+    font-size: 0.8em;
+    color: var(--text-muted-color);
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.cognitive-note {
+    background: var(--warning-light);
+    color: var(--warning-color);
+    padding: 12px 16px;
+    border-radius: var(--border-radius-sm);
+    border-left: 4px solid var(--warning-color);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.cognitive-note .feather {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* 风险因素分类 */
+.risk-category {
+    margin-bottom: 32px;
+    background: var(--light-bg-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.risk-category h5 {
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1em;
+}
+
+.category-factors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 12px;
+}
+
+.risk-factor-item {
+    background: var(--card-bg);
+    border-radius: var(--border-radius-sm);
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition-normal);
+}
+
+.risk-factor-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+.risk-factor-item label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    margin: 0;
+    font-weight: 500;
+}
+
+.risk-factor-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+}
+
+.factor-text {
+    flex: 1;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+.evidence-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.7em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.evidence-strong {
+    background-color: var(--success-light);
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+}
+
+.evidence-moderate {
+    background-color: var(--warning-light);
+    color: var(--warning-color);
+    border: 1px solid var(--warning-color);
+}
+
+.evidence-weak {
+    background-color: var(--info-light);
+    color: var(--info-color);
+    border: 1px solid var(--info-color);
+}
+
+/* ERAS干预方案 */
+.eras-intervention-plan {
+    background: var(--light-bg-color);
+    border-radius: var(--border-radius);
+    padding: 24px;
+    margin-top: 24px;
+}
+
+.eras-intervention-plan h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.risk-summary {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.risk-level-indicator {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.1em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.risk-level-indicator.urgent {
+    background: linear-gradient(135deg, var(--danger-color), #dc2626);
+    color: white;
+}
+
+.risk-level-indicator.high {
+    background: linear-gradient(135deg, var(--danger-color), #ef4444);
+    color: white;
+}
+
+.risk-level-indicator.moderate {
+    background: linear-gradient(135deg, var(--warning-color), #f59e0b);
+    color: white;
+}
+
+.risk-level-indicator.low {
+    background: linear-gradient(135deg, var(--success-color), #10b981);
+    color: white;
+}
+
+.risk-level-indicator.minimal {
+    background: linear-gradient(135deg, var(--success-color), #059669);
+    color: white;
+}
+
+/* 干预阶段 */
+.intervention-phase {
+    margin-bottom: 32px;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.intervention-phase h4 {
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 8px;
+}
+
+.interventions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 16px;
+}
+
+.intervention-card {
+    background: var(--light-bg-color);
+    border-radius: var(--border-radius-sm);
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition-normal);
+}
+
+.intervention-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.intervention-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    gap: 12px;
+}
+
+.intervention-header h5 {
+    color: var(--primary-color);
+    margin: 0;
+    flex: 1;
+}
+
+.intervention-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.effectiveness {
+    background-color: var(--success-light);
+    color: var(--success-color);
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-size: 0.75em;
+    font-weight: 600;
+}
+
+.intervention-description {
+    color: var(--text-color);
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.implementation-details,
+.family-role {
+    background: var(--card-bg);
+    padding: 8px 12px;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 8px;
+    border-left: 3px solid var(--info-color);
+    font-size: 0.9em;
+}
+
+.implementation-details strong,
+.family-role strong {
+    color: var(--info-color);
+}
+
+/* AI增强分析 */
+.ai-enhanced-insights {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--info-light) 100%);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 24px;
+    border: 1px solid var(--primary-color);
+}
+
+.ai-enhanced-insights h4 {
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ai-insights-content {
+    background: var(--card-bg);
+    border-radius: var(--border-radius-sm);
+    padding: 16px;
+    box-shadow: var(--card-shadow);
+}
+
+.insights-text {
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.insights-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9em;
+}
+
+.source {
+    color: var(--text-muted-color);
+    font-style: italic;
+}
+
+.confidence {
+    background-color: var(--success-light);
+    color: var(--success-color);
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* 家庭参与指南 */
+.family-guidelines {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    margin-top: 24px;
+}
+
+.evidence-highlight {
+    margin-bottom: 24px;
+}
+
+.evidence-banner {
+    background: linear-gradient(135deg, var(--success-light) 0%, var(--primary-light) 100%);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    border-left: 4px solid var(--success-color);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.evidence-banner .feather {
+    width: 24px;
+    height: 24px;
+    color: var(--success-color);
+    flex-shrink: 0;
+}
+
+.evidence-text {
+    flex: 1;
+}
+
+.evidence-text strong {
+    color: var(--text-color);
+    font-size: 1.1em;
+    line-height: 1.5;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.evidence-source {
+    color: var(--text-muted-color);
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.family-impact-stats {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.family-impact-stats h5 {
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.stat-item {
+    background: var(--light-bg-color);
+    border-radius: var(--border-radius-sm);
+    padding: 16px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: var(--transition-normal);
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.stat-number {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.stat-source {
+    font-size: 0.8em;
+    color: var(--text-muted-color);
+    line-height: 1.3;
+}
+
+.family-guidelines h4 {
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.guidelines-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.preoperative-guidelines,
+.postoperative-guidelines {
+    background: var(--light-bg-color);
+    border-radius: var(--border-radius-sm);
+    padding: 16px;
+}
+
+.preoperative-guidelines h5,
+.postoperative-guidelines h5 {
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    font-size: 1em;
+}
+
+.preoperative-guidelines ul,
+.postoperative-guidelines ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.preoperative-guidelines li,
+.postoperative-guidelines li {
+    background: var(--card-bg);
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    border-radius: var(--border-radius-sm);
+    border-left: 3px solid var(--primary-color);
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* 评估操作按钮 */
+.assessment-actions {
+    text-align: center;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+}
+
+.assessment-actions .button-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    font-size: 1.1em;
+    padding: 16px 32px;
+}
+
+.assessment-actions .button-primary:hover {
+    background: linear-gradient(135deg, var(--primary-hover), var(--primary-color));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+}
+
+/* 研究背景页面样式 */
+.research-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.system-positioning {
+    text-align: center;
+}
+
+.positioning-text {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+.positioning-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: var(--light-bg-color);
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--border-color);
+    transition: var(--transition-normal);
+}
+
+.feature-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.feature-item .feather {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-color);
+}
+
+.cognitive-tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.tool-card {
+    background: var(--light-bg-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition-normal);
+}
+
+.tool-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.tool-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    font-size: 1.2em;
+}
+
+.tool-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.tool-score,
+.tool-threshold {
+    background: var(--primary-light);
+    color: var(--primary-color);
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.tool-description {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.tool-application {
+    background: var(--info-light);
+    color: var(--info-color);
+    padding: 12px 16px;
+    border-radius: var(--border-radius-sm);
+    border-left: 3px solid var(--info-color);
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.evidence-category {
+    margin-bottom: 32px;
+}
+
+.evidence-category h4 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 8px;
+}
+
+.evidence-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.evidence-item {
+    background: var(--light-bg-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition-normal);
+}
+
+.evidence-item.highlight {
+    border-left: 4px solid var(--success-color);
+    background: linear-gradient(135deg, var(--success-light) 0%, var(--light-bg-color) 100%);
+}
+
+.evidence-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.evidence-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    gap: 16px;
+}
+
+.evidence-header h5 {
+    color: var(--primary-color);
+    margin: 0;
+    flex: 1;
+}
+
+.evidence-level {
+    background: var(--primary-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.8em;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.evidence-title {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.evidence-authors {
+    color: var(--text-muted-color);
+    font-style: italic;
+    margin-bottom: 4px;
+}
+
+.evidence-journal {
+    color: var(--text-muted-color);
+    margin-bottom: 4px;
+}
+
+.evidence-doi a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.evidence-doi a:hover {
+    text-decoration: underline;
+}
+
+.key-finding {
+    background: var(--warning-light);
+    color: var(--warning-color);
+    padding: 12px 16px;
+    border-radius: var(--border-radius-sm);
+    border-left: 3px solid var(--warning-color);
+    margin: 12px 0;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.concept-explanation {
+    background: var(--info-light);
+    color: var(--info-color);
+    padding: 12px 16px;
+    border-radius: var(--border-radius-sm);
+    border-left: 3px solid var(--info-color);
+    margin: 12px 0;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.evidence-description,
+.evidence-application {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-top: 12px;
+}
+
+.evidence-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.evidence-link a:hover {
+    text-decoration: underline;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.advantage-item {
+    text-align: center;
+    padding: 24px;
+    background: var(--light-bg-color);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    transition: var(--transition-normal);
+}
+
+.advantage-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.advantage-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--info-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+}
+
+.advantage-icon .feather {
+    width: 28px;
+    height: 28px;
+    color: white;
+}
+
+.advantage-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    font-size: 1.1em;
+}
+
+.advantage-item p {
+    color: var(--text-muted-color);
+    line-height: 1.5;
+    font-size: 0.95em;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .category-factors {
+        grid-template-columns: 1fr;
+    }
+    
+    .interventions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .intervention-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .intervention-meta {
+        align-items: flex-start;
+    }
+    
+    .guidelines-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .risk-factor-item label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .evidence-badge {
+        align-self: flex-start;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .assessment-intro {
+        background: white !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    .risk-category {
+        background: white !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    .intervention-card {
+        background: white !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    .family-guidelines {
+        background: white !important;
+        border: 1px solid #ccc !important;
+    }
+}

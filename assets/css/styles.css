@@ -1,0 +1,973 @@
+/* ==================== 全局变量与样式重置 ==================== */
+:root {
+    /* 主色调 - 医疗专业蓝 */
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-light: #dbeafe;
+    --primary-dark: #1e40af;
+    
+    /* 辅助色 */
+    --secondary-color: #64748b;
+    --success-color: #10b981;
+    --success-light: #d1fae5;
+    --info-color: #06b6d4;
+    --info-light: #cffafe;
+    --warning-color: #f59e0b;
+    --warning-light: #fef3c7;
+    --danger-color: #ef4444;
+    --danger-light: #fee2e2;
+    
+    /* 背景色 */
+    --light-bg-color: #f8fafc;
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --card-bg: #ffffff;
+    --card-bg-hover: #fefefe;
+    
+    /* 边框和阴影 */
+    --border-color: #e2e8f0;
+    --border-color-light: #f1f5f9;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+    --border-radius-lg: 16px;
+    
+    /* 文字颜色 */
+    --text-color: #1e293b;
+    --text-muted-color: #64748b;
+    --text-light-color: #94a3b8;
+    
+    /* 动画 */
+    --transition-fast: 0.15s ease-out;
+    --transition-normal: 0.3s ease-out;
+    --transition-slow: 0.5s ease-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background-color: var(--light-bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==================== 头部与导航 ==================== */
+.site-header {
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--primary-light) 100%);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(10px);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+.brand:hover {
+    transform: translateY(-2px);
+}
+
+.brand .feather {
+    margin-right: 12px;
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 2px 4px rgba(37, 99, 235, 0.2));
+}
+
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 12px 20px;
+    font-weight: 500;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+    transition: var(--transition-normal);
+}
+
+.nav a:hover::before {
+    left: 100%;
+}
+
+.nav a:hover, .nav a.active {
+    color: var(--primary-color);
+    background-color: var(--primary-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
+}
+
+/* ==================== 页面主体 ==================== */
+.page-head {
+    text-align: center;
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--light-bg-color) 0%, var(--primary-light) 100%);
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-head::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.page-head h1 {
+    font-size: 2.8em;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 1;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 30px;
+}
+
+/* ==================== 侧边栏 ==================== */
+.sidebar {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: var(--text-muted-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.sidebar a .feather {
+    width: 18px;
+    margin-right: 12px;
+}
+
+.sidebar a:hover {
+    background-color: #e9ecef;
+    color: var(--text-color);
+}
+
+/* ==================== 内容卡片 ==================== */
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 32px;
+    margin-bottom: 32px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--info-color));
+    transform: scaleX(0);
+    transition: var(--transition-normal);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--primary-light);
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card h3 {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.card h3 .feather {
+    color: var(--primary-color);
+    margin-right: 12px;
+}
+
+.card ul {
+    list-style-position: inside;
+    padding-left: 5px;
+}
+
+.card ul li {
+    margin-bottom: 10px;
+}
+
+/* ==================== 特殊卡片与元素 ==================== */
+.notice {
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin: 20px 0;
+    border-left: 5px solid;
+}
+
+.notice.info {
+    background-color: #e8f7fa;
+    border-color: var(--info-color);
+}
+
+.notice.danger {
+    background-color: #f8d7da;
+    border-color: var(--danger-color);
+}
+
+.notice.danger h3 .feather {
+    color: var(--danger-color);
+}
+
+.card-interactive {
+    text-align: center;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 1px solid var(--border-color);
+    padding: 40px;
+}
+
+.card-interactive .card-icon .feather {
+    width: 48px;
+    height: 48px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.button-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1em;
+    margin-top: 20px;
+    transition: var(--transition-normal);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.button-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: var(--transition-normal);
+}
+
+.button-primary:hover::before {
+    left: 100%;
+}
+
+.button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+    background: linear-gradient(135deg, var(--primary-hover), var(--primary-color));
+}
+
+.button-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.manual-checklist {
+    margin-top: 24px;
+    font-size: 0.9em;
+    color: var(--text-muted-color);
+}
+
+.manual-checklist summary {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.muted {
+    color: var(--text-muted-color);
+}
+
+/* ==================== 页脚 ==================== */
+.site-footer {
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 30px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9em;
+}
+
+/* ==================== 动画效果 ==================== */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 加载动画 */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--border-color);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 脉冲动画 */
+.pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* 淡入动画 */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 成功/错误状态 */
+.status-success {
+    color: var(--success-color);
+    background-color: var(--success-light);
+    padding: 8px 16px;
+    border-radius: var(--border-radius-sm);
+    border-left: 4px solid var(--success-color);
+}
+
+.status-error {
+    color: var(--danger-color);
+    background-color: var(--danger-light);
+    padding: 8px 16px;
+    border-radius: var(--border-radius-sm);
+    border-left: 4px solid var(--danger-color);
+}
+
+.status-warning {
+    color: var(--warning-color);
+    background-color: var(--warning-light);
+    padding: 8px 16px;
+    border-radius: var(--border-radius-sm);
+    border-left: 4px solid var(--warning-color);
+}
+
+
+/* ==================== 响应式设计 ==================== */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .page-head {
+        padding: 40px 0;
+    }
+    
+    .page-head h1 {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .two-col {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .sidebar {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .sidebar a {
+        background-color: var(--light-bg-color);
+        margin: 4px;
+        padding: 10px 16px;
+        border-radius: var(--border-radius-sm);
+        font-size: 0.9em;
+    }
+    
+    .header-inner { 
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .nav { 
+        margin-top: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav a { 
+        margin: 2px;
+        padding: 10px 16px;
+        font-size: 0.9em;
+    }
+    
+    .page-head {
+        padding: 30px 0;
+        margin-bottom: 20px;
+    }
+    
+    .page-head h1 {
+        font-size: 1.8em;
+    }
+    
+    .card {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .patient-list-item {
+        padding: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .patient-status {
+        align-self: flex-end;
+    }
+    
+    .modal-content {
+        padding: 24px;
+        margin: 20px;
+        width: calc(100% - 40px);
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .button-primary {
+        padding: 12px 24px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-head h1 {
+        font-size: 1.5em;
+    }
+    
+    .brand {
+        font-size: 1.3em;
+    }
+    
+    .nav a {
+        padding: 8px 12px;
+        font-size: 0.85em;
+    }
+    
+    .card {
+        padding: 16px;
+    }
+    
+    .patient-list-item {
+        padding: 12px;
+    }
+    
+    .patient-name {
+        font-size: 1.1em;
+    }
+    
+    .patient-meta {
+        font-size: 0.8em;
+    }
+    
+    .modal-content {
+        padding: 20px;
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+}
+/* ==================== 表单增强样式 ==================== */
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.field label {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.input, .textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1em;
+    transition: var(--transition-normal);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.input:focus, .textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    background-color: var(--card-bg-hover);
+    transform: translateY(-1px);
+}
+
+.input:hover, .textarea:hover {
+    border-color: var(--primary-light);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+    background-color: var(--light-bg-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+.actions {
+    margin-top: 30px;
+    text-align: right;
+}
+
+
+/* ==================== system.html 结果卡片样式 ==================== */
+.result-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    background-color: var(--light-bg-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin: 20px 0;
+}
+
+.recommendation-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.recommendation-list li {
+    padding: 15px;
+    background-color: #e8f7fa;
+    border-left: 5px solid var(--info-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+}
+
+
+/* ==================== contact.html 卡片样式 ==================== */
+.card-contact {
+    text-align: center;
+}
+
+.card-contact .feather {
+    width: 40px;
+    height: 40px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.link {
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+/* ==================== assessment.html 专用样式 ==================== */
+.form-question-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--light-bg-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.form-question-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.form-question-card label {
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.form-question-card input[type="checkbox"] {
+    transform: scale(1.8);
+    cursor: pointer;
+}
+
+#assessment-result .result-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+#gauge-container {
+    position: relative;
+    width: 200px;
+    height: 100px; /* Doughnut is a half-circle */
+}
+
+#assessment-result .result-summary h4 {
+    margin-bottom: 15px;
+}
+#assessment-result .result-summary p {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+#recommendations-container h4 {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    #assessment-result .result-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    #gauge-container {
+        margin: 0 auto 20px;
+    }
+}
+/* ==================== dashboard.html (仪表盘) 专用样式 ==================== */
+.page-head.with-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.patient-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 1px solid var(--border-color);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.patient-list-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--primary-color);
+    transform: scaleY(0);
+    transition: var(--transition-normal);
+}
+
+.patient-list-item:last-child {
+    border-bottom: none;
+}
+
+.patient-list-item:hover {
+    background: linear-gradient(135deg, var(--light-bg-color), var(--primary-light));
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+.patient-list-item:hover::before {
+    transform: scaleY(1);
+}
+
+.patient-name {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.patient-meta {
+    display: block;
+    font-size: 0.9em;
+    color: var(--text-muted-color);
+}
+
+.patient-status span {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85em;
+    color: white;
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.patient-status span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: var(--transition-normal);
+}
+
+.patient-status:hover span::before {
+    left: 100%;
+}
+
+.patient-status.status-low span { 
+    background: linear-gradient(135deg, var(--success-color), #059669);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+.patient-status.status-medium span { 
+    background: linear-gradient(135deg, var(--warning-color), #d97706);
+    color: white;
+    box-shadow: 0 4px 8px rgba(245, 158, 11, 0.3);
+}
+.patient-status.status-high span { 
+    background: linear-gradient(135deg, var(--danger-color), #dc2626);
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+}
+
+
+/* ==================== Modal (弹窗) 样式 ==================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: var(--border-radius-lg);
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    animation: slideIn 0.3s ease-out;
+    border: 1px solid var(--border-color);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: var(--text-muted-color);
+}
+
+/* ==================== patient-detail.html (时间线) 样式 ==================== */
+.timeline-item {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.timeline-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    color: white;
+}
+.timeline-icon.assessment { background-color: var(--primary-color); }
+.timeline-icon.screening.positive { background-color: var(--danger-color); }
+.timeline-icon.screening.negative { background-color: var(--success-color); }
+
+.timeline-content {
+    width: 100%;
+    position: relative;
+    padding-top: 20px;
+}
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: -20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--card-bg) transparent transparent;
+}
+
+
+.timeline-date {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.8em;
+    color: var(--text-muted-color);
+    text-align: right;
+}
+
+.recommendation-list.small li {
+    padding: 10px;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.card-interactive-small {
+    padding: 20px;
+    text-align: center;
+}
+.button-primary.small {
+    padding: 8px 16px;
+    margin-top: 10px;
+    font-size: 0.9em;
+}

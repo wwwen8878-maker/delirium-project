@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>联系我们 - 智护心脑</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet" />
+
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <i data-feather="shield"></i>
+                <span class="brand-text">智护心脑</span>
+            </div>
+            <nav class="nav">
+                <a href="./index.html">患者仪表盘</a>
+                <a href="./guide.html">指南解读</a>
+                <a href="./research-background.html">研究背景</a>
+                <a href="./contact.html" class="active">联系我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-head">
+            <h1>联系我们</h1>
+            <p class="muted">若您在项目中遇到问题，或有合作意向，欢迎通过以下方式与我们取得联系。</p>
+        </div>
+
+        <div class="two-col" style="grid-template-columns:1fr 1fr;gap:30px">
+            <div class="card card-contact animate-on-scroll">
+                <i data-feather="phone-call"></i>
+                <h3>电话支持</h3>
+                <p>直接与我们的专业团队通话</p>
+                <p><a class="link" href="tel:13078203952">130-7820-3952</a></p>
+            </div>
+            <div class="card card-contact animate-on-scroll">
+                <i data-feather="mail"></i>
+                <h3>邮件咨询</h3>
+                <p>发送您的问题到我们的邮箱</p>
+                <p><a class="link" href="mailto:3371453747@qq.com">3371453747@qq.com</a></p>
+            </div>
+        </div>
+
+        <div class="card animate-on-scroll" style="margin-top:30px">
+            <h3><i data-feather="message-square"></i>在线留言</h3>
+            <form id="contact-form">
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="name">您的姓名</label>
+                        <input class="input" id="name" name="name" placeholder="请输入您的姓名" required/>
+                    </div>
+                    <div class="field">
+                        <label for="contact-info">联系方式 (电话/邮箱)</label>
+                        <input class="input" id="contact-info" name="how" placeholder="方便我们与您联系" required/>
+                    </div>
+                </div>
+                <div class="field" style="margin-top:20px">
+                    <label for="message">留言内容</label>
+                    <textarea class="textarea" id="message" name="message" placeholder="请详细描述您的问题或建议…" rows="5" required></textarea>
+                </div>
+                <div class="actions">
+                    <button class="button-primary" type="submit">提交信息</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 智护心脑 - 术后谵妄预防与干预平台. All Rights Reserved.</p>
+            <p class="muted">本网站信息仅供参考，不能替代专业医疗建议。</p>
+        </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/enhanced-interactions.js"></script>
+    <script src="./assets/js/dark-mode.js"></script>
+    <script src="./assets/js/performance.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>术前谵妄风险干预 - 智护心脑</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet" />
+    <link href="./assets/css/preoperative-intervention.css" rel="stylesheet" />
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <i data-feather="shield"></i>
+                <span class="brand-text">智护心脑</span>
+            </div>
+            <nav class="nav">
+                <a href="./index.html">患者仪表盘</a>
+                <a href="./guide.html">指南解读</a>
+                <a href="./research-background.html">研究背景</a>
+                <a href="./contact.html">联系我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-head">
+            <h1>术前谵妄风险干预评估</h1>
+            <p class="muted">基于ERAS路径和最新循证医学证据，为患者和家庭制定个性化术前谵妄预防方案。</p>
+        </div>
+
+        <div class="card animate-on-scroll">
+            <form id="assessment-form">
+                <h3><i data-feather="file-text"></i>评估问卷</h3>
+                </form>
+        </div>
+
+        <div id="assessment-result" class="card animate-on-scroll" style="display: none;">
+            
+            <div id="professional-report">
+                <h3><i data-feather="bar-chart-2"></i>术前谵妄风险评估报告</h3>
+                <div class="result-grid">
+                    <div id="gauge-container">
+                        </div>
+                    <div class="result-summary">
+                        <h4>风险总结</h4>
+                        <p id="risk-score"><strong>风险总分:</strong> -</p>
+                        <p id="risk-level"><strong>风险等级:</strong> -</p>
+                        <p id="risk-probability"><strong>预估谵妄概率:</strong> -</p>
+                        <p class="muted" style="font-size: 0.8em; margin-top: 10px;">*基于2020-2024年最新研究数据，此结果仅供参考，不能替代专业医疗诊断。</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <div id="family-education-container">
+                </div>
+            
+            <div class="actions" style="margin-top: 20px;">
+                <button class="button-primary" onclick="window.print()">打印完整报告</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 智护心脑 - 术后谵妄预防与干预平台. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/js/database.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/simple-ai-enhancement.js"></script>
+    <script src="./assets/js/preoperative-delirium-intervention.js"></script>
+    <script src="./assets/js/enhanced-interactions.js"></script>
+    <script src="./assets/js/dark-mode.js"></script>
+    <script src="./assets/js/performance.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

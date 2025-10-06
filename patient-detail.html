@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>患者详情 - 智护心脑</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet" />
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand"><i data-feather="shield"></i><span class="brand-text">智护心脑</span></div>
+             <nav class="nav">
+                <a href="./index.html">患者仪表盘</a>
+                <a href="./guide.html">指南解读</a>
+                <a href="./contact.html">联系我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="patient-header" class="page-head with-action">
+            </div>
+
+        <div id="timeline-container">
+            </div>
+    </main>
+    
+    <div id="cam-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button id="close-cam-modal-btn" class="modal-close">&times;</button>
+            <h3>每日谵妄筛查 (CAM)</h3>
+            <p class="muted">请根据过去24小时的观察回答以下问题。</p>
+            <form id="cam-form">
+                <div class="form-question-card">
+                    <label for="cam1">特征1: 急性发作或波动过程</label>
+                    <input type="checkbox" id="cam1" name="cam1">
+                </div>
+                 <div class="form-question-card">
+                    <label for="cam2">特征2: 注意力不集中</label>
+                    <input type="checkbox" id="cam2" name="cam2">
+                </div>
+                 <div class="form-question-card">
+                    <label for="cam3">特征3: 思维混乱</label>
+                    <input type="checkbox" id="cam3" name="cam3">
+                </div>
+                 <div class="form-question-card">
+                    <label for="cam4">特征4: 意识水平改变</label>
+                    <input type="checkbox" id="cam4" name="cam4">
+                </div>
+                <div class="field" style="margin-top:20px">
+                    <label for="cam-notes">补充记录</label>
+                    <textarea class="textarea" id="cam-notes" rows="3" placeholder="例如: 晚间出现烦躁，已通知医生。"></textarea>
+                </div>
+                <div class="actions">
+                    <button type="submit" class="button-primary">提交筛查结果</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 智护心脑 - 术后谵妄预防与干预平台. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="./assets/js/database.js"></script>
+    <script src="./assets/js/patient-detail.js"></script>
+    <script src="./assets/js/enhanced-interactions.js"></script>
+    <script src="./assets/js/dark-mode.js"></script>
+    <script src="./assets/js/performance.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>
